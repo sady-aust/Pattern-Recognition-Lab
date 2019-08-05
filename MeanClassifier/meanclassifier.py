@@ -28,7 +28,7 @@ plt.scatter(class2X, class2Y, marker="+", color='blue')
 # plt.show()
 
 
-# Mean Classifier
+# MeanClassifier
 class1MeanMatrix = np.array([np.mean(class1X), np.mean(class1Y)])
 class2MeanMatrix = np.array([np.mean(class2X), np.mean(class2Y)])
 
