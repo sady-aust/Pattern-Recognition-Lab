@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05cd8313-62e8-44e6-84e7-acfc23195192" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PerceptronAlgo/Perceptrontrain.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PerceptronAlgo/code.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/PatternLab.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PatternLab.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -27,11 +28,12 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PerceptronAlgo" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\CSE\Pattern-Recognition-Lab\PerceptronAlgo" />
       <recent name="E:\PatternLab" />
     </key>
   </component>
@@ -47,7 +49,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.meanclassifier">
+  <component name="RunManager" selected="Python.code">
     <configuration name="15_02_04_097" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PatternLab" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,7 +72,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="lab" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="code" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PatternLab" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -78,12 +80,56 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/PerceptronAlgo" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lab.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PerceptronAlgo/code.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="lab (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PatternLab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MeanClassifier" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MeanClassifier/lab.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="meanclassifier (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PatternLab" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MeanClassifier" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MeanClassifier/meanclassifier.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -116,9 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.code" />
+        <item itemvalue="Python.meanclassifier (1)" />
+        <item itemvalue="Python.lab (1)" />
         <item itemvalue="Python.meanclassifier" />
         <item itemvalue="Python.15_02_04_097" />
-        <item itemvalue="Python.lab" />
       </list>
     </recent_temporary>
   </component>
@@ -136,6 +184,7 @@
       <workItem from="1564605171595" duration="365000" />
       <workItem from="1564827417827" duration="295000" />
       <workItem from="1565026167041" duration="107000" />
+      <workItem from="1567108543051" duration="7866000" />
     </task>
     <servers />
   </component>
@@ -147,14 +196,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PatternLab$lab.coverage" NAME="lab Coverage Results" MODIFIED="1564561042550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Pattern_Recognition_Lab$lab__1_.coverage" NAME="lab (1) Coverage Results" MODIFIED="1567108608737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MeanClassifier" />
     <SUITE FILE_PATH="coverage/PatternLab$15_02_04_097.coverage" NAME="15_02_04_097 Coverage Results" MODIFIED="1564827655807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Pattern_Recognition_Lab$code.coverage" NAME="code Coverage Results" MODIFIED="1567116153809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/PerceptronAlgo" />
+    <SUITE FILE_PATH="coverage/Pattern_Recognition_Lab$meanclassifier__1_.coverage" NAME="meanclassifier (1) Coverage Results" MODIFIED="1567108635787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MeanClassifier" />
+    <SUITE FILE_PATH="coverage/PatternLab$lab.coverage" NAME="lab Coverage Results" MODIFIED="1564561042550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
