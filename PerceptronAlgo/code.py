@@ -5,6 +5,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from tabulate import tabulate
+
+
 
 def getHignDimensionalvalue(x1,x2,isNormalized):
     if not isNormalized:
@@ -18,19 +21,23 @@ def gy(y,wT):
         ans.append(aY[0]*wT[0]+aY[1]*wT[1]+aY[2]*wT[2]+aY[3]*wT[3]+aY[4]*wT[4]+aY[5]*wT[5])
     return ans
 
+def signleWtY(y,w):
+    return y[0]*w[0] + y[1]*w[1] + y[2]*w[2] + y[3]*w[3] + y[4]*w[4] + y[5]*w[5]
+
 def isAllClassified(gy):
     for i in gy:
         if i<=0:
             return False
     return True
 
-def manyAtATime(initialWeightVector,ALPHA):
+def manyAtATime(myHighDimensionalArrays,initialWeightVector,ALPHA):
     counter = 1
     while counter <= 200:
         currentGy = gy(myHighDimensionalArrays, initialWeightVector)
 
         if isAllClassified(currentGy):
-           return counter
+            print("For Alpha ",ALPHA," in Many at a time weight Coefficient ",initialWeightVector)
+            return counter
         else:
             misclassified = []
             for i in range(0, len(currentGy)):
@@ -48,29 +55,56 @@ def manyAtATime(initialWeightVector,ALPHA):
         counter += 1
     return -1
 
-def oneAtATime(initialWeightVector,ALPHA):
-    counter = 1
-    while counter <= 200:
-        currentGy = gy(myHighDimensionalArrays, initialWeightVector)
+def oneAtATime(myHighDimensionalArrays,initialWeightVector,ALPHA):
+    updateFunction = []
+    counter = 0
 
-        if isAllClassified(currentGy):
-           return counter
-        else:
-            misclassified = []
-            for i in range(0, len(currentGy)):
-                if currentGy[i] <= 0:
-                    misclassified.append(myHighDimensionalArrays[i])
+    while counter<200:
+        counter +=1
+        numberOfClassified = 0
 
-            modifiedMissClassified = []
-            for aMissClassified in misclassified:
-                modifiedMissClassified.append([i * ALPHA for i in aMissClassified])
+        for aHighDimensionalArray in myHighDimensionalArrays:
+           wTy = signleWtY(aHighDimensionalArray,initialWeightVector)
+           if(wTy<=0):
+               updateFunction = aHighDimensionalArray
+               modifiedUpdateFunction = [i*ALPHA for i in updateFunction]
+               temp = []
 
-            modifiedMissClassified.append(initialWeightVector)
+               temp.append(modifiedUpdateFunction)
+               temp.append(initialWeightVector)
+               initialWeightVector = np.sum(temp, axis=0)
+           else:
+               numberOfClassified +=1
 
-            initialWeightVector = np.sum(modifiedMissClassified, axis=0)
-
-        counter += 1
+        if numberOfClassified == 6:
+            print("For Alpha ", ALPHA, " in One at a time weight Coefficient ", initialWeightVector)
+            return counter
     return -1
+
+def drowGroupChart(oneCountArray,manyCountArray,title):
+    fig, ax = plt.subplots()
+    plt.xlabel('Learning Rate')
+    plt.ylabel('Numbers Of Iterations')
+    plt.title(title)
+    index = alphaValues
+    bar_width = 0.025
+    opacity = 0.8
+
+    rects1 = plt.bar(index, oneCountArray, bar_width,
+                     alpha=opacity,
+                     color='b',
+                     label='One at a time')
+
+    rects2 = plt.bar(index + bar_width, manyCountArray, bar_width,
+                     alpha=opacity,
+                     color='y',
+                     label='Many at a time')
+
+    plt.xticks(index + bar_width, tuple(alphaValues))
+    plt.legend()
+
+    plt.tight_layout()
+    plt.show()
 
 
 trainDataset = pd.read_csv('Perceptrontrain.txt', sep=" ", header=None, dtype='float64')
@@ -123,16 +157,57 @@ for i in range(len(class2X)):
 
 initialWeightVector = [1,1,1,1,1,1]
 alphaValues = np.arange(0.1,1.1,0.1)
-
+alphaValues[2] = 0.30
+alphaValues[6] = 0.70
+table = []
+oneCountArray = []
+manyCountArray = []
 for ALPHA in alphaValues:
-    count = manyAtATime(initialWeightVector,ALPHA)
-    if count != -1:
-        print("For Alpha ",ALPHA," Many at a time ",count)
+    oneCount = oneAtATime(myHighDimensionalArrays,initialWeightVector,ALPHA)
+    manyCount = manyAtATime(myHighDimensionalArrays,initialWeightVector,ALPHA)
+    oneCountArray.append(oneCount)
+    manyCountArray.append(manyCount)
+    table.append([ALPHA,oneCount,manyCount])
 
-print()
+
+name = ["Alpha(Learning Rate)","One at a time","Many at a time"]
+print("Case 1: Initial Weight Vector All One")
+print(tabulate(table, name, tablefmt="youtrack"))
+
+drowGroupChart(oneCountArray,manyCountArray,"Case 1: Initial Weight Vector All One")
+
 initialWeightVector = [0,0,0,0,0,0]
+oneCountArray = []
+manyCountArray = []
 
+table = []
 for ALPHA in alphaValues:
-    count = manyAtATime(initialWeightVector,ALPHA)
-    if count != -1:
-        print("For Alpha ",ALPHA," Many at a time ",count)
+    oneCount = oneAtATime(myHighDimensionalArrays,initialWeightVector,ALPHA)
+    manyCount = manyAtATime(myHighDimensionalArrays,initialWeightVector,ALPHA)
+    oneCountArray.append(oneCount)
+    manyCountArray.append(manyCount)
+    table.append([ALPHA,oneCount,manyCount])
+
+
+name = ["Alpha(Learning Rate)","One at a time","Many at a time"]
+print("Case 2: Initial Weight Vector All Zero")
+print(tabulate(table, name, tablefmt="youtrack"))
+
+drowGroupChart(oneCountArray,manyCountArray,"Case 2: Initial Weight Vector All Zero")
+
+initialWeightVector = np.random.random(6)
+oneCountArray = []
+manyCountArray = []
+table = []
+for ALPHA in alphaValues:
+    oneCount = oneAtATime(myHighDimensionalArrays,initialWeightVector,ALPHA)
+    manyCount = manyAtATime(myHighDimensionalArrays,initialWeightVector,ALPHA)
+    oneCountArray.append(oneCount)
+    manyCountArray.append(manyCount)
+    table.append([ALPHA,oneCount,manyCount])
+
+
+name = ["Alpha(Learning Rate)","One at a time","Many at a time"]
+print("Case 3: Initial Weight Vector Random Numbers ",initialWeightVector)
+print(tabulate(table, name, tablefmt="youtrack"))
+drowGroupChart(oneCountArray,manyCountArray,"Case 3: Initial Weight Vector Random Numbers")
